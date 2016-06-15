@@ -1,0 +1,2 @@
+# Vizzy
+Music Visualizer app
