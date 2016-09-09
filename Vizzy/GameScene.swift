@@ -116,6 +116,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
         
@@ -139,15 +140,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-//    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
-//        // Called when the device movoes
-//        let panGesture = UIPanGestureRecognizer()
-//        panGesture.userInteractionEnabled = true
-//        
-//        let location = CGPoint(x: 500.0, y: 340.0)
-//        if motion == .MotionShake {
-//            self.addRectangle(location)
-//        }
-//    }
+
+    
+    
+    
+
     
 }

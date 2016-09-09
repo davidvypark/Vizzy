@@ -8,8 +8,11 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
+import MediaPlayer
 
 class GameViewController: UIViewController {
+    let audioPlayer = AVAudioPlayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class GameViewController: UIViewController {
             skView.showsFPS = true
             skView.showsNodeCount = true
             
+
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
             
@@ -29,7 +33,27 @@ class GameViewController: UIViewController {
             skView.presentScene(scene)
         }
     }
-
+    
+    @IBAction func pickSongButton(sender: AnyObject) {
+        
+        let mediaPicker = MPMediaPickerController(mediaTypes: .Music)
+        //mediaPicker.delegate = self
+        mediaPicker.allowsPickingMultipleItems = false
+        mediaPicker.showsCloudItems = true
+        presentViewController(mediaPicker, animated: true, completion: {})
+    
+    }
+    
+//    func mediaPicker(mediaPicker:MPMediaPickerController, mediaItemCollection: MPMediaItemCollection) {
+//        
+//        myPlayer.setQueueWithItemCollection(mediaCollection)
+//        var itemsFromGenericQuery: [AnyObject] = mediaItemCollection.items
+//        self.pickedMediaItemSong = itemsFromGenericQuery[0]
+//        curePickerController.dismissViewControllerAnimated(false, completion: nil)
+//        
+//    }
+    
+    
     override func shouldAutorotate() -> Bool {
         return true
     }
